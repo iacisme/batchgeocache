@@ -1,0 +1,133 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "batchgeocache"
+version = "0.1.0"
+description = "City-agnostic, resumable batch address geocoding via the Nominatim API."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+# NOTE: intentionally unpinned while in exploratory development. Once ready
+# to test/validate/deploy, add a `[project.optional-dependencies] production`
+# (or a separate `container`/`requirements-lock.txt`) group with pinned
+# versions for whatever subset actually ships. See skeleton at bottom of
+# this file.
+dependencies = [
+    # Core geocoding / data
+    "geopy",
+    "pandas",
+
+    # Project Jupyter related libraries
+    "jupyterlab",
+    "jupyterlab-spellchecker",
+
+    # Science related libraries
+    "numpy",
+    "scipy",
+    "statsmodels",
+    "polars",
+
+    # Interactive tools libraries
+    "ipywidgets",
+
+    # Graphing libraries
+    "matplotlib",
+    "seaborn",
+
+    # Analyzing missing values
+    "missingno",
+
+    # Mapping
+    "folium",
+    "ipyleaflet",
+    "geemap",
+    # "leafmap",  # intentionally left out for now
+    "shapely",
+
+    # Dash and Dash Components
+    "dash",
+    "dash-ag-grid",
+    "dash_daq",
+    "dash-bootstrap-components",
+    "dash-mantine-components",
+    "dash-extensions",
+    "dash-iconify",
+
+    # Graph data exploration
+    "networkx",
+
+    # Pub / Sub clients
+    "metpx-sr3",
+    "amqp",
+    "paho-mqtt",
+
+    # Geo libraries
+    "geopandas",
+    "pyogrio",
+    "geojson",
+    "mapclassify",
+    "pyarrow",
+    "fiona",
+
+    # AI Agents
+    "google-adk",
+    "langchain",
+    "langgraph",
+
+    # Library to open excel files
+    "openpyxl",
+
+    # Machine Learning and Computer-Vision
+    "mlxtend", # Apriori and other useful tools
+    "opencv-contrib-python",
+    "scikit-image",
+    "scikit-learn",
+    "skrub",
+    "skore",
+    "xgboost",
+
+    # Web scraping related libraries
+    "html5lib",
+    "lxml",
+    "selenium",
+    "webdriver-manager",
+    "beautifulsoup4",
+    "playwright",
+
+    # SQL libraries
+    "jupysql",
+    "ibm-db",
+    "oracledb",
+    "SQLAlchemy",
+
+    # MkDocs
+    "mkdocs",
+    "mkdocs-material",
+
+    # Python
+    "debugpy",
+
+    # Utilities
+    "wget",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+# --- Future: pinned release deps, added once ready to test/validate/deploy ---
+# production = [
+#     "geopy==2.4.1",
+#     "pandas==2.2.2",
+#     # ...only the subset that actually ships, pinned.
+# ]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
