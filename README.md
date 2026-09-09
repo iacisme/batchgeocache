@@ -21,7 +21,7 @@ Given an address dataset (roughly 100–5,000 records), BatchGeoCache:
 No PyPI package yet — install straight from GitHub:
 
 ```bash
-pip install git+https://github.com/<org>/BatchGeoCache.git
+pip install git+https://github.com/iacisme/BatchGeoCache.git
 ```
 
 ## Usage (Google Colab)

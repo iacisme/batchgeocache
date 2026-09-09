@@ -1,0 +1,20 @@
+# Named geographic boundaries used by inspect_results.py's geographic
+# sanity check.
+#
+# Each table below is one named boundary. Add a new one by adding a
+# new table here -- no code changes required.
+#
+# Fields:
+#   lat_range     -- [min, max] latitude, required
+#   lon_range     -- [min, max] longitude, required
+#   fsa_prefixes  -- optional list of Canadian postal FSA (Forward
+#                    Sortation Area) prefixes associated with this
+#                    boundary. This is a SECONDARY, weaker signal
+#                    than the lat/lon bounding box -- a postal-code
+#                    heuristic, not a real geometric test -- so it's
+#                    optional and not every boundary will have one.
+
+[calgary]
+lat_range = [50.7, 51.3]
+lon_range = [-114.4, -113.7]
+fsa_prefixes = ["T1", "T2", "T3", "T4A", "T4B", "T4C"]

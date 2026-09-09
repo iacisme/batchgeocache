@@ -1,3 +1,8 @@
-"""BatchGeoCache: city-agnostic batch address geocoding via Nominatim."""
+"""
+BatchGeoCache.
 
-__version__ = "0.1.0"
+Utilities for batch geocoding Canadian addresses using the
+Nominatim API.
+"""
+
+__version__ = "1.0.0"
