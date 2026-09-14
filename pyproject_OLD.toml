@@ -2,7 +2,6 @@
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
-
 [project]
 name = "batchgeocache"
 version = "0.1.0"
@@ -17,14 +16,9 @@ license = { text = "MIT" }
 # versions for whatever subset actually ships. See skeleton at bottom of
 # this file.
 dependencies = [
+    # Core geocoding / data
     "geopy",
     "pandas",
-]
-
-
-[project.optional-dependencies]
-dev = [
-    "pytest>=8.0",
 
     # Project Jupyter related libraries
     "jupyterlab",
@@ -87,7 +81,7 @@ dev = [
     "openpyxl",
 
     # Machine Learning and Computer-Vision
-    "mlxtend",
+    "mlxtend", # Apriori and other useful tools
     "opencv-contrib-python",
     "scikit-image",
     "scikit-learn",
@@ -120,17 +114,10 @@ dev = [
     "wget",
 ]
 
-colab = [
-    # Currently empty: everything the notebook needs (geopy, pandas) is
-    # already in the base `dependencies`, so `pip install -e ".[colab]"`
-    # and plain `pip install -e .` behave identically today. Kept as its
-    # own named extra anyway so the Colab install cell documents intent
-    # and won't silently start pulling in unrelated packages if `dev`
-    # grows later. Add here only if a future notebook cell needs
-    # something the core package doesn't (e.g. "ipywidgets" for a
-    # progress-bar widget).
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
 ]
-
 
 # --- Future: pinned release deps, added once ready to test/validate/deploy ---
 # production = [
@@ -139,10 +126,8 @@ colab = [
 #     # ...only the subset that actually ships, pinned.
 # ]
 
-
 [tool.setuptools.packages.find]
 where = ["src"]
-
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
