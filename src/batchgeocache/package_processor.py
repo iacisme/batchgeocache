@@ -166,18 +166,18 @@ class PackageProcessor:
 
         columns = [
             "address",
-            "normalized_address",
+          #  "normalized_address",
             "city",
             "province",
             "country",
             "status",
             "postal_code",
-            "latitude",
-            "longitude",
-            "display_name",
+          #  "latitude",
+          #  "longitude",
+          #  "display_name",
             "error_type",
             "error_message",
-            "normalization_changes",
+          #  "normalization_changes",
         ]
 
         success_df = pd.DataFrame(
